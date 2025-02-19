@@ -185,6 +185,14 @@ describe('Should test creating, replying, merging, removing, and upducks in foru
         studentUpduckPost(title1);
         studentUpduckPost(title2);
         studentUpduckPost(title3);
+        
+        // Grader Upduck
+        cy.logout();
+        cy.login('grader');
+        cy.visit(['sample', 'forum']);
+        staffUpduckPost('grader', title1);
+        staffUpduckPost('grader', title2);
+        staffUpduckPost('grader', title3);
 
         // TA upduck
         cy.logout();
